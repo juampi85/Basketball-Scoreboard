@@ -1,0 +1,178 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    text-align: center;
+    background-image: url(./images/cancha-spurs.jpg);
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.container {
+    display: grid;
+    width: 50vw;
+    margin: auto;
+    border-radius: 15px;
+    border: 5px black solid;
+    margin-top: 25px;
+    row-gap: 25px;
+    grid-template-columns: 2fr 1fr 2fr;
+    grid-template-rows: repeat(4, auto);
+
+    background-color: #1B244A;
+    grid-template-areas: "home new  guest"
+                                      "hPoints new gPoints"
+                                      "hExtra new gExtra";
+}
+
+.home-title {
+    grid-area: home;
+    display: flex;
+    height: 3rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.guest-title {
+    grid-area: guest;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+h3 {
+    color: #EEEEEE;
+    font-family: 'Verdana';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 40px;
+}
+
+#home--points, #guest--points{
+    color: #F94F6D;
+    font-family: 'Cursed Timer ULiL';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 5rem;
+    padding-top: .9rem;
+}
+
+.h--total--points {
+    grid-area: hPoints;
+    background-color: #080001;
+    min-width: 8rem;
+    width: auto;
+    height: auto;
+    justify-self: center;
+    align-self: center;
+}
+
+.g--total--points {
+    grid-area: gPoints;
+    background-color: #080001;
+    min-width: 8rem;
+    width: auto;
+    height: auto;
+    justify-self: center;
+    align-self: center;
+}
+
+.h--extras {
+    grid-area: hExtra;
+}
+
+.g--extras {
+    grid-area: gExtra;
+
+}
+
+.extras--options {
+    border: #9AABD8 solid .125rem;
+    border-radius: 0.2rem;
+    height: 2.2rem;
+    width: 2.2rem;
+    color: #9AABD8;
+    font-family: 'Cursed Timer ULiL';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1rem;
+    background-color: transparent;
+}
+
+.option-1, .option-2, .option-4, .option-5 {
+    margin-right: 5px;
+}
+
+.middle-board {
+    grid-area: new;
+    display: grid;
+    place-content: center;
+}
+
+.new-game-btn {
+    height: 3.5rem;
+    width: 7rem;
+    font-size: 1rem;
+    justify-self: center;
+    border-radius: 15px;
+    background-color: #9AABD8;
+}
+
+@font-face {
+    font-family: Cursed Timer ULiL;
+    src: url(./CursedTimerUlil-Aznm.ttf);
+    font-weight: 400;
+    font-style: normal;
+  }
+
+.winner {
+    background-color: rgb(103, 226, 123);
+}
+
+#game-result {
+    margin-top: 1.5rem;
+    font-size: 1.45rem;
+    font-style: oblique;
+    color: #EEEEEE;
+    font-weight: bolder;
+}
+
+@media only screen and (max-width: 920px){
+    .container {
+        row-gap: 5px;
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+        "home"
+        "hPoints"
+        "hExtra"
+        "new"
+        "guest"
+        "gPoints"
+        "gExtra";
+    }
+
+    .middle-board {
+        margin: 20px 0;
+    }
+
+    .new-game-btn {
+        margin-bottom: -15px;
+    }
+
+    .g--extras {
+        margin-bottom: .5rem;
+    }
+
+    h3 {
+        color: #F94F6D;
+    }
+
+    #home--points, #guest--points{
+        color: #EEEEEE;
+    }
+}
